@@ -32,6 +32,7 @@ This is a simple terminal-based text editor project,written in C++. It started a
 To compile and run the program, use these commands in the terminal:
 
 g++ main.cpp -o texteditor
+
 ./texteditor
 
 
