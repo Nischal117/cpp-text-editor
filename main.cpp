@@ -1,23 +1,57 @@
 #include <iostream>
 #include "task.hpp"
 #include <vector>
-
+#include <string>
 
 using namespace std;
 
 	int main()
 		{
 		std::vector<Task> tasks;
-		Task simpletask,t2;
-		t2.description = "Make dinner";
-		t2.completed = true;
-		simpletask.description = "LearnC++";
-		simpletask.completed = false;
+		Task simpletask;
+		
+	while(true)
+		{
+	    cout << "Press 1 for new task \nPress 2 for view all tasks \nPress 3 for exit\n";
+	    int userInput;
+	cin >> userInput;
+	cin.ignore();
+	
+	
+		if(userInput == 1)	
+	{
+		int userChoice;	
+		cout << "Enter the total tasks : ";
+		cin >> userChoice;
+		cin.ignore();
+		for(int i = 0 ; i< userChoice ; i++)
+		{
+		cout << "Enter a task description : ";
+		getline(cin , simpletask.description);
+                simpletask.completed = false;
 		tasks.push_back(simpletask);
-		tasks.push_back(t2);
-
-
-	cout << "1st task : " <<"Description : " <<  tasks[0].description << endl << "Completed : " << tasks[0].completed  << endl << endl;		
-	cout << "2nd task : " << endl << "description : " << tasks[1].description << endl << "Completed : " << tasks[1].completed << endl; 
-
 		}
+	}
+		else if(userInput == 2)
+	{
+		for(int i = 0 ; i < tasks.size() ; i++)
+		{
+	cout << "task" << i+1 << " : " <<"Description : " <<  tasks[i].description << "   Completed : " << tasks[i].completed  << endl;		
+		}
+	
+	}
+		else if(userInput == 3)
+		{
+		break;
+		}
+		
+		else
+	{
+		cout << "Invalid input";
+		
+	}
+
+
+		}	
+
+}
